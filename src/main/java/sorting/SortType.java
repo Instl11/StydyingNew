@@ -1,3 +1,3 @@
 package sorting;
 
-enum SortType {MY, BUBBLE, QUICK, JAVABOX}
+public enum SortType {MY, BUBBLE, QUICK, JAVABOX}
