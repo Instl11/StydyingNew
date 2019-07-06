@@ -8,10 +8,6 @@ import java.util.List;
 public class EmployeeHandler {
     public static void main(String[] args) {
 
-        List<Employee> arrEmp = new ArrayList<>();
-        List<Employee> linkedEmp = new LinkedList<>();
-        Employee.initList(arrEmp, 100);
-        Employee.initList(linkedEmp, 100);
 
     }
 

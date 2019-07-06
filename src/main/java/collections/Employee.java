@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
+import java.util.function.Supplier;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -15,9 +16,9 @@ public class Employee {
     private int age;
     private int salary;
 
-    public static void initList(List<Employee> list, int capacity){
+    public static <T> void initList(List<T> list, int capacity, Supplier<T> supplier){
         for (int i = 0; i < capacity; i++){
-            list.add(i, new Employee());
+            list.add(i, supplier.get());
         }
     }
 }

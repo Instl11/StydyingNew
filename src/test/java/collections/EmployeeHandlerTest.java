@@ -24,18 +24,18 @@ class EmployeeHandlerTest {
     class testSmallLists {
 
         @ParameterizedTest
-        @DisplayName("ArrayList with number of insertions")
+        @DisplayName("ArrayList | Number of insertions:")
         @ValueSource(ints = {100, 1000, 10000, 100000})
         void testSmallArrayList(int quantity) {
-            Employee.initList(arrEmpSmall, 100);
+            Employee.initList(arrEmpSmall, 100, Employee::new);
             EmployeeHandler.insertNumberOfEmployees(quantity, arrEmpSmall);
         }
 
         @ParameterizedTest
-        @DisplayName("LinkedList with number of insertions")
+        @DisplayName("LinkedList | Number of insertions:")
         @ValueSource(ints = {100, 1000, 10000, 100000})
         void testSmallLinkedList(int quantity) {
-            Employee.initList(linkedEmpSmall, 100);
+            Employee.initList(linkedEmpSmall, 100, Employee::new);
             EmployeeHandler.insertNumberOfEmployees(quantity, arrEmpSmall);
         }
     }
@@ -45,18 +45,18 @@ class EmployeeHandlerTest {
     class testMidLists {
 
         @ParameterizedTest
-        @DisplayName("ArrayList with number of insertions")
+        @DisplayName("ArrayList | Number of insertions:")
         @ValueSource(ints = {100, 1000, 10000, 100000})
         void testSmallArrayList(int quantity) {
-            Employee.initList(arrEmpMid, 1000);
+            Employee.initList(arrEmpMid, 1000, Employee::new);
             EmployeeHandler.insertNumberOfEmployees(quantity, arrEmpMid);
         }
 
         @ParameterizedTest
-        @DisplayName("LinkedList with number of insertions")
+        @DisplayName("LinkedList | Number of insertions:")
         @ValueSource(ints = {100, 1000, 10000, 100000})
         void testSmallLinkedList(int quantity) {
-            Employee.initList(linkedEmpMid, 1000);
+            Employee.initList(linkedEmpMid, 1000, Employee::new);
             EmployeeHandler.insertNumberOfEmployees(quantity, linkedEmpMid);
         }
     }
@@ -66,18 +66,18 @@ class EmployeeHandlerTest {
     class testLongLists {
 
         @ParameterizedTest
-        @DisplayName("ArrayList with number of insertions")
+        @DisplayName("ArrayList | Number of insertions:")
         @ValueSource(ints = {100, 1000, 10000, 100000})
         void testSmallArrayList(int quantity) {
-            Employee.initList(arrEmpLong, 10000);
+            Employee.initList(arrEmpLong, 10000, Employee::new);
             EmployeeHandler.insertNumberOfEmployees(quantity, arrEmpLong);
         }
 
         @ParameterizedTest
-        @DisplayName("LinkedList with number of insertions")
+        @DisplayName("LinkedList | Number of insertions:")
         @ValueSource(ints = {100, 1000, 10000, 100000})
         void testSmallLinkedList(int quantity) {
-            Employee.initList(linkedEmpLong, 10000);
+            Employee.initList(linkedEmpLong, 10000, Employee::new);
             EmployeeHandler.insertNumberOfEmployees(quantity, linkedEmpLong);
         }
     }
