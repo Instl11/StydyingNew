@@ -19,7 +19,7 @@ class SortsTest {
     private long start;
 
     @BeforeEach
-    void start(){
+    void start() {
         start = System.currentTimeMillis();
     }
 
@@ -33,17 +33,17 @@ class SortsTest {
         assertArrayEquals(this.copyArr, arr, "The array is not sorted");
     }
 
-    void arraysInit(int arrCapacity){
+    void arraysInit(int arrCapacity) {
         Random random = new Random();
         arr = new int[arrCapacity];
-        for (int i = 0; i < arr.length; i++){
+        for (int i = 0; i < arr.length; i++) {
             arr[i] = random.nextInt(10000) - 5000;
         }
         copyArr = Arrays.copyOf(arr, arr.length);
     }
 
     @AfterEach
-    void end(){
+    void end() {
         System.out.println("Execution time: " + (System.currentTimeMillis() - start));
     }
 }
