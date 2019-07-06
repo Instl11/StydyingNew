@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-class RunnerTest {
+class EmployeeHandlerTest {
 
     private List<Employee> arrEmpSmall = new ArrayList<>();
     private List<Employee> arrEmpMid = new ArrayList<>();
@@ -28,7 +28,7 @@ class RunnerTest {
         @ValueSource(ints = {100, 1000, 10000, 100000})
         void testSmallArrayList(int quantity) {
             Employee.initList(arrEmpSmall, 100);
-            Runner.insertNumberOfEmployees(quantity, arrEmpSmall);
+            EmployeeHandler.insertNumberOfEmployees(quantity, arrEmpSmall);
         }
 
         @ParameterizedTest
@@ -36,7 +36,7 @@ class RunnerTest {
         @ValueSource(ints = {100, 1000, 10000, 100000})
         void testSmallLinkedList(int quantity) {
             Employee.initList(linkedEmpSmall, 100);
-            Runner.insertNumberOfEmployees(quantity, arrEmpSmall);
+            EmployeeHandler.insertNumberOfEmployees(quantity, arrEmpSmall);
         }
     }
 
@@ -49,7 +49,7 @@ class RunnerTest {
         @ValueSource(ints = {100, 1000, 10000, 100000})
         void testSmallArrayList(int quantity) {
             Employee.initList(arrEmpMid, 1000);
-            Runner.insertNumberOfEmployees(quantity, arrEmpMid);
+            EmployeeHandler.insertNumberOfEmployees(quantity, arrEmpMid);
         }
 
         @ParameterizedTest
@@ -57,7 +57,7 @@ class RunnerTest {
         @ValueSource(ints = {100, 1000, 10000, 100000})
         void testSmallLinkedList(int quantity) {
             Employee.initList(linkedEmpMid, 1000);
-            Runner.insertNumberOfEmployees(quantity, linkedEmpMid);
+            EmployeeHandler.insertNumberOfEmployees(quantity, linkedEmpMid);
         }
     }
 
@@ -70,7 +70,7 @@ class RunnerTest {
         @ValueSource(ints = {100, 1000, 10000, 100000})
         void testSmallArrayList(int quantity) {
             Employee.initList(arrEmpLong, 10000);
-            Runner.insertNumberOfEmployees(quantity, arrEmpLong);
+            EmployeeHandler.insertNumberOfEmployees(quantity, arrEmpLong);
         }
 
         @ParameterizedTest
@@ -78,7 +78,7 @@ class RunnerTest {
         @ValueSource(ints = {100, 1000, 10000, 100000})
         void testSmallLinkedList(int quantity) {
             Employee.initList(linkedEmpLong, 10000);
-            Runner.insertNumberOfEmployees(quantity, linkedEmpLong);
+            EmployeeHandler.insertNumberOfEmployees(quantity, linkedEmpLong);
         }
     }
 
