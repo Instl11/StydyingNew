@@ -11,13 +11,8 @@ import java.util.List;
 
 class EmployeeHandlerTest {
 
-    private List<Employee> arrEmpSmall = new ArrayList<>();
-    private List<Employee> arrEmpMid = new ArrayList<>();
-    private List<Employee> arrEmpLong = new ArrayList<>();
-    private List<Employee> linkedEmpSmall = new LinkedList<>();
-    private List<Employee> linkedEmpMid = new LinkedList<>();
-    private List<Employee> linkedEmpLong = new LinkedList<>();
-
+    private List<Employee> arrEmp = new ArrayList<>();
+    private List<Employee> linkedEmp = new LinkedList<>();
 
     @Nested
     @DisplayName("Lists of 100 elements")
@@ -26,17 +21,17 @@ class EmployeeHandlerTest {
         @ParameterizedTest
         @DisplayName("ArrayList | Number of insertions:")
         @ValueSource(ints = {100, 1000, 10000, 100000})
-        void testSmallArrayList(int quantity) {
-            Employee.initList(arrEmpSmall, 100, Employee::new);
-            EmployeeHandler.insertNumberOfEmployees(quantity, arrEmpSmall);
+        void testShortArrayList(int quantity) {
+            Employee.initList(arrEmp, 100, Employee::new);
+            EmployeeHandler.insertNumberOfEmployees(quantity, arrEmp);
         }
 
         @ParameterizedTest
         @DisplayName("LinkedList | Number of insertions:")
         @ValueSource(ints = {100, 1000, 10000, 100000})
-        void testSmallLinkedList(int quantity) {
-            Employee.initList(linkedEmpSmall, 100, Employee::new);
-            EmployeeHandler.insertNumberOfEmployees(quantity, arrEmpSmall);
+        void testShortLinkedList(int quantity) {
+            Employee.initList(linkedEmp, 100, Employee::new);
+            EmployeeHandler.insertNumberOfEmployees(quantity, linkedEmp);
         }
     }
 
@@ -47,17 +42,17 @@ class EmployeeHandlerTest {
         @ParameterizedTest
         @DisplayName("ArrayList | Number of insertions:")
         @ValueSource(ints = {100, 1000, 10000, 100000})
-        void testSmallArrayList(int quantity) {
-            Employee.initList(arrEmpMid, 1000, Employee::new);
-            EmployeeHandler.insertNumberOfEmployees(quantity, arrEmpMid);
+        void testMidArrayList(int quantity) {
+            Employee.initList(arrEmp, 1000, Employee::new);
+            EmployeeHandler.insertNumberOfEmployees(quantity, arrEmp);
         }
 
         @ParameterizedTest
         @DisplayName("LinkedList | Number of insertions:")
         @ValueSource(ints = {100, 1000, 10000, 100000})
-        void testSmallLinkedList(int quantity) {
-            Employee.initList(linkedEmpMid, 1000, Employee::new);
-            EmployeeHandler.insertNumberOfEmployees(quantity, linkedEmpMid);
+        void testMidLinkedList(int quantity) {
+            Employee.initList(linkedEmp, 1000, Employee::new);
+            EmployeeHandler.insertNumberOfEmployees(quantity, linkedEmp);
         }
     }
 
@@ -68,17 +63,38 @@ class EmployeeHandlerTest {
         @ParameterizedTest
         @DisplayName("ArrayList | Number of insertions:")
         @ValueSource(ints = {100, 1000, 10000, 100000})
-        void testSmallArrayList(int quantity) {
-            Employee.initList(arrEmpLong, 10000, Employee::new);
-            EmployeeHandler.insertNumberOfEmployees(quantity, arrEmpLong);
+        void testLongArrayList(int quantity) {
+            Employee.initList(arrEmp, 10000, Employee::new);
+            EmployeeHandler.insertNumberOfEmployees(quantity, arrEmp);
         }
 
         @ParameterizedTest
         @DisplayName("LinkedList | Number of insertions:")
         @ValueSource(ints = {100, 1000, 10000, 100000})
-        void testSmallLinkedList(int quantity) {
-            Employee.initList(linkedEmpLong, 10000, Employee::new);
-            EmployeeHandler.insertNumberOfEmployees(quantity, linkedEmpLong);
+        void testLongLinkedList(int quantity) {
+            Employee.initList(linkedEmp, 10000, Employee::new);
+            EmployeeHandler.insertNumberOfEmployees(quantity, linkedEmp);
+        }
+    }
+
+    @Nested
+    @DisplayName("Lists of 100000 elements")
+    class testVeryLongLists {
+
+        @ParameterizedTest
+        @DisplayName("ArrayList | Number of insertions:")
+        @ValueSource(ints = {100, 1000, 10000, 100000})
+        void testShortArrayList(int quantity) {
+            Employee.initList(arrEmp, 100000, Employee::new);
+            EmployeeHandler.insertNumberOfEmployees(quantity, arrEmp);
+        }
+
+        @ParameterizedTest
+        @DisplayName("LinkedList | Number of insertions:")
+        @ValueSource(ints = {100, 1000, 10000, 100000})
+        void testShortLinkedList(int quantity) {
+            Employee.initList(linkedEmp, 100000, Employee::new);
+            EmployeeHandler.insertNumberOfEmployees(quantity, linkedEmp);
         }
     }
 

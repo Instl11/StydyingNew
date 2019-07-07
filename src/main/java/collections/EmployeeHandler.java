@@ -7,14 +7,14 @@ import java.util.List;
 
 public class EmployeeHandler {
     public static void main(String[] args) {
-
+        List<Employee> l = new ArrayList<>();
 
     }
 
     static void insertNumberOfEmployees(int quantity, List<Employee> list) {
         long start = System.currentTimeMillis();
         for (int i = 0; i < quantity; i++)
-            list.add((list.size() / 2), new Employee());
+            list.add(list.size()/2, new Employee());
         long end = System.currentTimeMillis();
         System.out.println("Execution time: " + (end - start) + " ms");
 
